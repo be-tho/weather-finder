@@ -7,6 +7,10 @@
     <!-- CSS bootstrap only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 
+    <!-- CSS FontAwesome-->
+    <script src="https://use.fontawesome.com/c2f6067406.js"></script>
+
+
     <!-- agregando el css -->
     <link rel="stylesheet" href="css/estilos.css">
 </head>
@@ -16,13 +20,15 @@
             <div class="container my-2">
                 <h1 class="title text-center">Clima en</h1>
                 <form class="buscar-lugar" v-on:submit.prevent="getClima">
-                    <input
-                            type="text"
-                            class="form-control text-muted form-rounded p-4 shadow-sm"
-                            placeholder="Que ciudad?"
-                            autocomplete="off"
-                            v-model="ciudadBuscar"
-                    />
+                    <label>
+                        <input
+                                type="text"
+                                class="form-control text-muted form-rounded p-4 shadow-sm"
+                                placeholder="Que ciudad?"
+                                autocomplete="off"
+                                v-model="ciudadBuscar"
+                        />
+                    </label>
                 </form>
                 <div icon="sunny">
                     <span class="sun"></span>
@@ -46,11 +52,11 @@
                             <div class="row">
                                 <div class="col d-flex justify-content-between px-5 mx-5">
                                     <p>
-                                        <img src="img/down.svg" alt="" />
+                                        <i class="fas fa-arrow-down"></i>
                                         {{ clima.tempBaja }}&deg;C
                                     </p>
                                     <p>
-                                        <img src="img/up.svg" alt="" />
+                                        <span><i class="fas fa-arrow-up"></i></span>
                                         {{ clima.tempAlta }}&deg;C
                                     </p>
                                 </div>

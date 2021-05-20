@@ -1,3 +1,4 @@
+/*PALETA DE COLORES https://coolors.co/13095e-264653-e9c46a-f4a261-e76f51*/
 *{
     box-sizing: border-box;
     padding: 0;
@@ -5,7 +6,7 @@
 }
 h1{
     text-shadow: 2px 2px 2px #676768;
-    color: #376ec5;
+    color: #ffffff;
 }
 #main{
     font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -82,6 +83,11 @@ h1{
     border-radius: 40px !important;
     color: white;
     background: linear-gradient(to bottom right,#479af2,#13095e);
+    border-color: #3d3dff;
     text-shadow: 2px 2px 2px #080875;
+    box-shadow: 2px 2px 2px #2c3e50;
+}
+.icon-up, .icon-down{
+    font-size: 0.5em;
 }
 

@@ -6,14 +6,14 @@ const app = new Vue({
            dia:true,
            ciudadBuscar: "",
            clima: {
-               nombreCiudad: "Buenos Aires",
-               pais: "ARG",
-               temperatura: 12,
-               descripcion: "Muchas Nubes",
-               tempBaja: "8",
-               tempAlta: "19",
-               feelsLike: "20",
-               humedad: "70",
+               nombreCiudad: localStorage.getItem("nombreCiudad"),
+               pais: localStorage.getItem("pais"),
+               temperatura: localStorage.getItem("temp"),
+               descripcion: localStorage.getItem("desc"),
+               tempBaja: localStorage.getItem("tempBaja"),
+               tempAlta: localStorage.getItem("tempAlta"),
+               feelsLike: localStorage.getItem("feelsLike"),
+               humedad: localStorage.getItem("humedad"),
            },
        }
    },
@@ -45,14 +45,28 @@ const app = new Vue({
            this.clima.humedad = Math.round(data.main.humidity);
            const tiempoDeDia = data.weather[0].icon;
 
-           //Seteando si es de dia o de noche.
+           //Guardo la data en localStorage de mi busqueda
+           localStorage.setItem("nombreCiudad", this.clima.nombreCiudad);
+           localStorage.setItem("pais", this.clima.pais);
+           localStorage.setItem("temp", this.clima.temperatura);
+           localStorage.setItem("desc", this.clima.descripcion);
+           localStorage.setItem("tempBaja", this.clima.tempBaja);
+           localStorage.setItem("tempAlta", this.clima.tempAlta);
+           localStorage.setItem("feelsLike", this.clima.feelsLike);
+           localStorage.setItem("humedad", this.clima.humedad);
+
             if(tiempoDeDia.includes("n")){
                 this.dia = false;
-                console.log(this.dia);
+
             }else{
                 this.dia = true;
                 console.log(this.dia);
             }
-       }
-    }
+
+
+
+           //Seteando si es de dia o de noche.
+
+       },
+    },
 });
