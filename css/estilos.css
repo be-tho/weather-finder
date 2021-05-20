@@ -3,6 +3,10 @@
     padding: 0;
     margin: 0;
 }
+h1{
+    text-shadow: 2px 2px 2px #676768;
+    color: #376ec5;
+}
 #main{
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -28,13 +32,56 @@
     font-size: 1.5em;
     font-weight: 600;
 }
+.nombre-ciudad span{
+    position: relative;
+    top: -50px;
+    font-size: 40pt;
+    font-family: 'Times New Roman', Times, serif;
+}
+.temp span{
+    font-weight: 100;
+    font-size: 4em;
+    letter-spacing: -5px;
+    white-space: nowrap;
+}
+.card-mid{
+    line-height: 0.5;
+}
+.condition{
+    font-size: 1em;
+    font-weight: 700;
+    line-height: 1em;
+    text-transform: capitalize;
+}
+.card-bottom{
+    line-height: 0.5;
+}
+.card-bottom p{
+    font-size: 2.5em;
+    font-weight: 100;
+    letter-spacing: -3px;
+}
+.card-bottom span{
+    font-size: 12px;
+}
+.form-control:focus{
+    box-shadow: none;
+    border-color: inherit;
+}
 .dia{
-    background: linear-gradient(to bottom left, #fff8df, #ffffff);
+    background: linear-gradient(to bottom right, #e9c46a, #f4a261);
 }
 .noche{
-    background: linear-gradient(to bottom left, #4854a2, #3d3d3d);
+    background: linear-gradient(to bottom left, #373737, #090e3e);
 }
 .noche h1{
     color: white;
+    text-shadow: 2px 2px 2px #000811;
+}
+.back-card {
+    border-radius: 40px !important;
+    color: white;
+    background: linear-gradient(to bottom right,#479af2,#13095e);
+    text-shadow: 2px 2px 2px #080875;
 }
 
