@@ -2,14 +2,14 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>TP Clima | Albert Villarroel</title>
-
+    <title>PWA | Albert Villarroel</title>
+    <link rel="shortcut icon" type="image/ico" href="img/storm.ico"/>
     <!-- CSS bootstrap only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 
     <!-- CSS FontAwesome-->
     <script src="https://kit.fontawesome.com/6d6f513e3c.js" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="">
 
     <!-- agregando el css -->
     <link rel="stylesheet" href="css/estilos.css">
@@ -34,7 +34,8 @@
                 <div class="card rounded my-3 shadow-lg back-card overflow-hidden">
                     <div class="card-top text-center">
                         <div class="nombre-ciudad my-3">
-                            <p>{{ clima.nombreCiudad }}</p>
+                            <p class="m-0">{{ clima.nombreCiudad }}</p>
+                            <div id="img-clima"></div>
                             <span>...</span>
                             <p class="">{{ clima.pais }}</p>
                         </div>
@@ -45,6 +46,11 @@
                                 <div class="col-12 text-center temp">
                                     <span>{{ clima.temperatura }}&deg;C</span>
                                     <p class="my-4">{{ clima.descripcion }}</p>
+                                </div>
+                                <div class="col-12 text-center my-3">
+                                    <i class="fas fa-wind"></i>
+                                    <span>{{ clima.viento }} m/s</span>
+                                    <p class="my-3">Vientos</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -63,7 +69,7 @@
                         <div class="card-bottom px-5 py-4 row">
                             <div class="col text-center">
                                 <p>{{ clima.feelsLike }}&deg;C</p>
-                                <span>Se siente Bien</span>
+                                <span>Sesación térmica</span>
                             </div>
                             <div class="col text-center">
                                 <p>{{ clima.humedad }}%</p>

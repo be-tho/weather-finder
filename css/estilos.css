@@ -35,8 +35,8 @@ h1{
 }
 .nombre-ciudad span{
     position: relative;
-    top: -50px;
-    font-size: 40pt;
+    top: -20px;
+    font-size: 40px;
     font-family: 'Times New Roman', Times, serif;
 }
 .temp span{

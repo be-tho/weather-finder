@@ -5,6 +5,7 @@ const app = new Vue({
        return{
            dia:true,
            ciudadBuscar: "",
+           flag:null,
            clima: {
                nombreCiudad: localStorage.getItem("nombreCiudad"),
                pais: localStorage.getItem("pais"),
@@ -14,6 +15,9 @@ const app = new Vue({
                tempAlta: localStorage.getItem("tempAlta"),
                feelsLike: localStorage.getItem("feelsLike"),
                humedad: localStorage.getItem("humedad"),
+               viento: localStorage.getItem("viento"),
+               lat: "",
+               lon: "",
            },
        }
    },
@@ -43,7 +47,12 @@ const app = new Vue({
            this.clima.tempAlta = Math.round(data.main.temp_max);
            this.clima.feelsLike = Math.round(data.main.feels_like);
            this.clima.humedad = Math.round(data.main.humidity);
+           this.clima.viento = data.wind.speed;
+           this.clima.lat = data.coord.lat;
+           this.clima.lon = data.coord.lon;
+
            const tiempoDeDia = data.weather[0].icon;
+
 
            //Guardo la data en localStorage de mi busqueda
            localStorage.setItem("nombreCiudad", this.clima.nombreCiudad);
@@ -54,6 +63,7 @@ const app = new Vue({
            localStorage.setItem("tempAlta", this.clima.tempAlta);
            localStorage.setItem("feelsLike", this.clima.feelsLike);
            localStorage.setItem("humedad", this.clima.humedad);
+           localStorage.setItem("viento", this.clima.viento);
 
             if(tiempoDeDia.includes("n")){
                 this.dia = false;
@@ -63,7 +73,35 @@ const app = new Vue({
                 console.log(this.dia);
             }
 
+            let op = this.clima.descripcion;
+            let imgClima = document.getElementById('img-clima');
 
+            if(this.flag == null){
+                switch (op){
+                    case "overcast clouds":
+                        const img = document.createElement("img");
+                        img.src= "img/nublado.png";
+                        img.alt = "Nublado";
+                        img.width = 150;
+                        img.id = "toogle-clima";
+                        imgClima.appendChild(img);
+                        this.flag = false;
+                        break;
+
+                    case "light rain":
+                        const img2 = document.createElement("img");
+                        img2.src= "img/lluvia.png";
+                        img2.alt = "lluvia";
+                        img2.width = 150;
+                        img2.id = "toogle-clima";
+                        imgClima.appendChild(img2);
+                        break;
+                }
+            }else{
+                let borrado = document.getElementById('toggle-clima').remove();
+                console.log(borrado);
+                this.flag = true;
+            }
 
            //Seteando si es de dia o de noche.
 
