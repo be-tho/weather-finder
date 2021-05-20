@@ -14,7 +14,62 @@
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-    <h1>Testeando XD</h1>
-    <p>Llalala testing</p>
+    <main class="container">
+        <div class="container my-2">
+            <h1 class="title text-center">Clima en</h1>
+            <form class="buscar-lugar" v-on:submit.prevent="getClima">
+                <input
+                        type="text"
+                        class="form-control text-muted form-rounded p-4 shadow-sm"
+                        placeholder="Que ciudad?"
+                        autocomplete="off"
+                />
+            </form>
+            <div icon="sunny">
+                <span class="sun"></span>
+            </div>
+            <div class="card rounded my-3 shadow-lg back-card overflow-hidden">
+                <div class="card-top text-center">
+                    <div class="nombre-ciudad my-3">
+                        <p>Buenos Aires</p>
+                        <span>...</span>
+                        <p class="">Arg</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-mid">
+                        <div class="row">
+                            <div class="col-12 text-center temp">
+                                <span>15&deg;C</span>
+                                <p class="my-4">Mucho frio</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col d-flex justify-content-between px-5 mx-5">
+                                <p>
+                                    <img src="img/down.svg" alt="" />
+                                    10&deg;C
+                                </p>
+                                <p>
+                                    <img src="img/up.svg" alt="" />
+                                    15&deg;C
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-bottom px-5 py-4 row">
+                        <div class="col text-center">
+                            <p>Congelado&deg;C</p>
+                            <span>Se siente Bien</span>
+                        </div>
+                        <div class="col text-center">
+                            <p>75%</p>
+                            <span>Humedad</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
