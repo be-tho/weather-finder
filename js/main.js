@@ -28,7 +28,7 @@ const app = new Vue({
 
            //Datos para la petición
            console.log(this.ciudadBuscar);
-           const APPI_KEY = "c6f6c8cacc4c4b6d31edf9d80cd34c25";
+           const APPI_KEY = "";
            const URL = `https://api.openweathermap.org/data/2.5/weather?q=${this.ciudadBuscar}&appid=${APPI_KEY}&units=metric`;
 
 
