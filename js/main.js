@@ -3,6 +3,7 @@ const app = new Vue({
    el : '#app',
    data(){
        return{
+           dia:true,
            ciudadBuscar: "",
            clima: {
                nombreCiudad: "Buenos Aires",
@@ -42,8 +43,16 @@ const app = new Vue({
            this.clima.tempAlta = Math.round(data.main.temp_max);
            this.clima.feelsLike = Math.round(data.main.feels_like);
            this.clima.humedad = Math.round(data.main.humidity);
-
            const tiempoDeDia = data.weather[0].icon;
+
+           //Seteando si es de dia o de noche.
+            if(tiempoDeDia.includes("n")){
+                this.dia = false;
+                console.log(this.dia);
+            }else{
+                this.dia = true;
+                console.log(this.dia);
+            }
        }
     }
 });

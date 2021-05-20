@@ -3,8 +3,15 @@
     padding: 0;
     margin: 0;
 }
-body{
-    background: #eeece2;
+#main{
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 .container {
     max-width: 400px;
@@ -21,13 +28,13 @@ body{
     font-size: 1.5em;
     font-weight: 600;
 }
-#main{
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    position: absolute;
-    height: 100%;
-    width: 100%;
+.dia{
+    background: linear-gradient(to bottom left, #fff8df, #ffffff);
 }
+.noche{
+    background: linear-gradient(to bottom left, #4854a2, #3d3d3d);
+}
+.noche h1{
+    color: white;
+}
+

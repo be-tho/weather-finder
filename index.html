@@ -12,7 +12,7 @@
 </head>
 <body>
     <div id="app">
-            <main id="main" >
+        <main id="main" :class="dia ? 'dia' : 'noche'">
             <div class="container my-2">
                 <h1 class="title text-center">Clima en</h1>
                 <form class="buscar-lugar" v-on:submit.prevent="getClima">
