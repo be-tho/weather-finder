@@ -12,7 +12,7 @@
 </head>
 <body>
     <div id="app">
-        <main  class="container" >
+            <main id="main" >
             <div class="container my-2">
                 <h1 class="title text-center">Clima en</h1>
                 <form class="buscar-lugar" v-on:submit.prevent="getClima">
@@ -30,39 +30,39 @@
                 <div class="card rounded my-3 shadow-lg back-card overflow-hidden">
                     <div class="card-top text-center">
                         <div class="nombre-ciudad my-3">
-                            <p>Buenos Aires</p>
+                            <p>{{ clima.nombreCiudad }}</p>
                             <span>...</span>
-                            <p class="">Arg</p>
+                            <p class="">{{ clima.pais }}</p>
                         </div>
                     </div>
                     <div class="card-body">
                         <div class="card-mid">
                             <div class="row">
                                 <div class="col-12 text-center temp">
-                                    <span>15&deg;C</span>
-                                    <p class="my-4">Mucho frio</p>
+                                    <span>{{ clima.temperatura }}&deg;C</span>
+                                    <p class="my-4">{{ clima.descripcion }}</p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col d-flex justify-content-between px-5 mx-5">
                                     <p>
                                         <img src="img/down.svg" alt="" />
-                                        10&deg;C
+                                        {{ clima.tempBaja }}&deg;C
                                     </p>
                                     <p>
                                         <img src="img/up.svg" alt="" />
-                                        15&deg;C
+                                        {{ clima.tempAlta }}&deg;C
                                     </p>
                                 </div>
                             </div>
                         </div>
                         <div class="card-bottom px-5 py-4 row">
                             <div class="col text-center">
-                                <p>15&deg;C</p>
+                                <p>{{ clima.feelsLike }}&deg;C</p>
                                 <span>Se siente Bien</span>
                             </div>
                             <div class="col text-center">
-                                <p>75%</p>
+                                <p>{{ clima.humedad }}%</p>
                                 <span>Humedad</span>
                             </div>
                         </div>

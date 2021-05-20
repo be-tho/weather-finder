@@ -11,9 +11,23 @@ body{
     min-width: 360px;
 }
 .title{
-    font-size: 50px;
+    font-size: 3rem;
     font-weight: 500;
 }
 .form-rounded{
     border-radius: 2rem;
+}
+.nombre-ciudad p:first-of-type{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+#main{
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
